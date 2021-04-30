@@ -1,0 +1,8 @@
+{
+    "fun":"mysqlinsert",
+    "db":"mysql",
+    "data":{
+        "name":"eee",
+        "address":"fff"
+    }
+}
