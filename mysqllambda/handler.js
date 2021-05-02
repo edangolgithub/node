@@ -11,16 +11,18 @@ module.exports.hello = async (event) => {
   var fun;
   var data;
   var param = event.body ? JSON.parse(event.body) : event;
-  
-    fun = param.fun;
-    data = param.data;
-  
+
+  fun = param.fun;
+  data = param.data;
+
 
   switch (fun) {
     case "mysqlselect":
       return await mysqlselect();
     case "mysqlinsert":
       return await db.mysqlinsert(pool, data);
+    case "mysqlquery":
+      return await db.mysqlquery(param);
 
     default:
       return {

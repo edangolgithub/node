@@ -1,5 +1,8 @@
+
+
 {
-    "TableName": "Transaction",
+    "fun":"get",
+    "TableName": "Inventory",
     "IndexName": "latestindex",
     "KeyConditionExpression": "islatest = :hkey",
     "ExpressionAttributeValues": {

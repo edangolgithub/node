@@ -1,0 +1,8 @@
+{
+    "fun":"get",
+    "TableName": "Inventory",
+    
+    "Key": {
+        "Id": "772593f5-e0b1-4ca1-98c1-06455c8d657c"
+      }
+}

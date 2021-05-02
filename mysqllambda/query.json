@@ -1,0 +1,12 @@
+{
+    "fun": "mysqlquery",
+    "host": "remotemysql.com",
+    "user": "zZHNrdILlq",
+    "password": "hnmJyMt02K",
+    "database": "zZHNrdILlq",
+    "query": "select * from evan",
+    "data": {
+        "name": "try",
+        "address": "catch"
+    }
+}
