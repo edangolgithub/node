@@ -1,6 +1,10 @@
 {
   "dependencies": {
-    "mysql": "^2.18.1"
+    "aws-sdk": "^2.897.0"
   },
-  "name": "nodelambda"
+  "name": "s3lambda",
+  "devDependencies": {
+    "serverless-webpack": "^5.4.2",
+    "webpack": "^5.36.2"
+  }
 }

@@ -1,0 +1,10 @@
+{
+    "fun":"insertone",
+    "uri": "mongodb+srv://edangol:mongodbpassword@evancluster.hvppq.mongodb.net/test?retryWrites=true&w=majority",
+    "db":"ed",
+    "collection":"ec",
+    "data":{   
+        "id":3,    
+        "name":"shyam"
+    }
+}

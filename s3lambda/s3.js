@@ -5,7 +5,7 @@ const s3 = new AwsS3({
     region: 'us-east-1',
 });
 
-export const createBucket = (bucketName) => {
+module.exports.createBucket = (bucketName) => {
        const params = {
         Bucket: bucketName
     };
@@ -15,7 +15,7 @@ export const createBucket = (bucketName) => {
         else console.log('Bucket Created Successfully', data);
     });
 }
-export async function listbuckets() {
+module.exports.listbuckets=async()=> {
     // Call S3 to list the buckets
     return s3.listBuckets(function (err, data) {
         if (err) {
@@ -27,7 +27,7 @@ export async function listbuckets() {
         }
     }).promise();
 }
-export const listobjects = (bucketname) => {
+module.exports.listobjects = (bucketname) => {
     var param = {
         Bucket: bucketname
     }
@@ -41,7 +41,7 @@ export const listobjects = (bucketname) => {
         }
     }).promise();
 }
-export const listobjectsv2 = (bucketname) => {
+module.exports.listobjectsv2 = (bucketname) => {
     var param = {
         Bucket: bucketname
     }
@@ -57,7 +57,7 @@ export const listobjectsv2 = (bucketname) => {
 }
 
 
-export const fileupload = async (files,bucket="ed2021") => {
+module.exports.fileupload = async (files,bucket="ed2021") => {
     // Binary data base64
     const fileContent = Buffer.from(files.file.data, 'binary');
 
@@ -79,7 +79,7 @@ export const fileupload = async (files,bucket="ed2021") => {
 }
 
 
-export const uploadimage = async (files, folder, bucket = 'ed2021') => {
+module.exports.uploadimage = async (files, folder, bucket = 'ed2021') => {
     // Binary data base64
     const fileContent = Buffer.from(files.image.data, 'binary');
 

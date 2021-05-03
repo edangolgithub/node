@@ -1,0 +1,11 @@
+{
+    "fun":"find",
+    "uri": "mongodb+srv://edangol:mongodbpassword@evancluster.hvppq.mongodb.net/test?retryWrites=true&w=majority",
+    "db":"ed",
+    "collection":"ec",
+    "limit":10,
+    "data":
+    {
+        "id": { "$lte": 3 }
+    }
+}

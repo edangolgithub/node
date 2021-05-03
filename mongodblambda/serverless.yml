@@ -11,7 +11,7 @@
 #
 # Happy Coding!
 
-service: s3lambda
+service: mongodblambda
 # app and org for use with dashboard.serverless.com
 #app: your-app-name
 #org: your-org-name
@@ -24,15 +24,12 @@ provider:
   name: aws
   runtime: nodejs12.x
   lambdaHashingVersion: 20201221
-  region: us-east-1
   deploymentBucket: evanlambdas
   iamRoleStatements:
     - Effect: Allow
       Action:
         - s3:*       
       Resource: "*"
-plugins: 
-  - serverless-webpack
 
 # you can overwrite defaults here
 #  stage: dev
