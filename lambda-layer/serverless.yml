@@ -1,0 +1,23 @@
+service: lambda-layer
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
+  region: us-east-1
+  deploymentBucket: evanlambdas
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - s3:*       
+      Resource: "*"
+
+layers:
+  awssdkLayer:
+    path: awssdk_layer
+    description: "awssdk Dependencies"
+
+    #arn:aws:lambda:us-east-1:984648741180:layer:awssdkLayer:1
+

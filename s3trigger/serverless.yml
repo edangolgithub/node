@@ -1,0 +1,21 @@
+service: s3trigger
+package:
+  exclude:
+    - node_modules/**
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
+
+
+functions:
+  hello:
+    name: s3trigger
+    handler: handler.hello
+    environment:
+      NODE_PATH: "./:/opt/node_modules"
+    layers:
+      - arn:aws:lambda:us-east-1:984648741180:layer:awssdkLayer:1
