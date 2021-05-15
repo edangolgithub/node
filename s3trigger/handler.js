@@ -19,8 +19,7 @@ module.exports.hello = async (event, context) => {
   );
   console.log(event.Records[0].s3.object);
   const news = `Some one uploaded- ${key} in Bucket ${bucket} -> ${key}
-  https://s3.console.aws.amazon.com/s3/buckets/contactuseco?region=us-east-1&tab=objects
-  `;
+  https://contactuseco.s3.amazonaws.com/${key}`;
 
   const params = {
     Bucket: bucket,
