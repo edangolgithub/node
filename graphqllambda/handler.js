@@ -1,14 +1,14 @@
-const { GraphQLClient } = require('graphql-request');
+const { GraphQLClient } = require("graphql-request");
 
 exports.hello = async (event, context) => {
-
-//console.log(process.env.API);
-
+  var param = event.body ? JSON.parse(event.body) : event;
+console.log(param);
+//return;
   const endpoint = process.env.API_URL;
   const graphQLClient = new GraphQLClient(endpoint, {
     headers: {
-      'x-api-key': process.env.API
-    }
+      "x-api-key": process.env.API,
+    },
   });
 
   const mutation = `
@@ -16,7 +16,12 @@ exports.hello = async (event, context) => {
       createTodo(input:$input) {
         id
         name
-        description
+        message
+        customer
+        user
+        read
+        createdAt
+        updatedAt
       }
     }
   `;
@@ -24,14 +29,28 @@ exports.hello = async (event, context) => {
   const variables = `
   {
     "input": {
-     "name": "go to the doctor",
-     "description": "seeing Dr Ho"
+     "name": "${param.name}",
+     "message":"${param.message}",
+     "customer":"${param.customer}",
+     "user":"${param.user}",
+     "read": "${param.read}"
    }
   }
   `;
 
   const data = await graphQLClient.request(mutation, variables);
 
-console.log(data);
-  return data;
+  console.log(data);
+  return {
+    statusCode: 200,
+          body: JSON.stringify(
+            {
+              message: 'Go Serverless v1.0! Your function executed successfully!',
+
+              data: data
+            },
+            null,
+            2
+          )
+  };
 };

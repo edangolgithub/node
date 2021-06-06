@@ -3,7 +3,7 @@ const { v4: uuidv4 } = require('uuid');
 const dynamo = require("./dynamo")
 module.exports.hello = async (event) => {
   var param = event.body ? JSON.parse(event.body) : event;
-
+     console.log(event);
   switch (param.fun) {
     case "scan":
       var data = await dynamo.scantable(param);
