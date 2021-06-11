@@ -129,3 +129,7 @@ tmp/
 temp/
 
 # End of https://www.toptal.com/developers/gitignore/api/node
+
+
+#  sls create -t aws-nodejs
+#  sls invoke local -f hello

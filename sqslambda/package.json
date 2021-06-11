@@ -2,5 +2,6 @@
   "dependencies": {
     "aws-sdk": "^2.907.0",
     "axios": "^0.21.1"
-  }
+  },
+  "name": "sqslambda"
 }
