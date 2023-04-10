@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "aws-sdk": "^2.897.0"
+    "aws-sdk": "^2.1354.0"
   },
   "name": "s3lambda",
   "devDependencies": {
